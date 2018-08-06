@@ -1,0 +1,254 @@
+/* RESET CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox {
+-webkit-appearance: none;
+border-radius: 0;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* GLOBAL */
+.bg-screener{
+	background: url(../img/background.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Nunito', sans-serif;
+}
+.bg-index{
+	background-color: #fff;
+	font-family: 'Nunito', sans-serif;
+}
+.bg-line{
+	width: 100%;
+	height: 75%;
+	background: rgba(229,215,190,1);
+	background: -moz-linear-gradient(top, rgba(229,215,190,1) 0%, rgba(227,222,212,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(229,215,190,1)), color-stop(100%, rgba(227,222,212,1)));
+	background: -webkit-linear-gradient(top, rgba(229,215,190,1) 0%, rgba(227,222,212,1) 100%);
+	background: -o-linear-gradient(top, rgba(229,215,190,1) 0%, rgba(227,222,212,1) 100%);
+	background: -ms-linear-gradient(top, rgba(229,215,190,1) 0%, rgba(227,222,212,1) 100%);
+	background: linear-gradient(to bottom, rgba(229,215,190,1) 0%, rgba(227,222,212,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5d7be', endColorstr='#e3ded4', GradientType=0 );
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+
+/* SCREEN */
+#picture-box{
+	position: fixed;
+	top: 10%;
+	left: 4%;
+	width: 60%;
+	height: 80%;
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 10px 78px -1px rgba(0,0,0,0.71);
+	-moz-box-shadow: 0px 10px 78px -1px rgba(0,0,0,0.71);
+	box-shadow: 0px 10px 78px -1px rgba(0,0,0,0.71);
+}
+#picture-box img{
+	display: block;
+	width: auto;
+	max-height: 100%;
+	margin: 0 auto;
+}
+
+
+#content{
+	position: fixed;
+	top: 10%;
+	right: 3%;
+	width: 30%;
+	height: 100%;
+}
+#content img{
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+#howto{
+	position: fixed;
+	bottom: 4%;
+	left: 2%;
+	overflow: hidden;
+}
+#howto #round{
+	height: 100px;
+	width: 100px;
+	float: left;
+	background-color: #d4bba4;
+	border-radius: 100%;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+}
+#howto #round img{
+	line-height: 100px;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+	padding-top: 23px;
+}
+#howto #message{
+	width: auto;
+	float: left;
+	background-color: #d4bba4;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	margin: 15px 0 0 10px;
+	padding: 10px 20px;
+}
+#howto #message p{
+	color: #5d5040;
+	font-size: 1.2rem;
+	line-height: 26px;
+}
+#howto #message p span{
+	color: #fff;
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+
+/* UPLOAD / INDEX PAGE */
+#upload{
+	background-color: #fff;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	overflow: hidden;
+}
+#upload .pic{
+	background-color: #e7e1d8;
+}
+#upload .pic img{
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+#upload .text{
+	padding: 10px;
+}
+#upload .text h1{
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+}
+#upload .text p{
+	font-size: 1rem;
+	color: #645c51;
+	line-height: 22px;
+}
+
+#upload form{
+	margin: 10px;
+}
+
+#upload .loader{
+	display: none;
+}
+
+#upload #submit{
+	display: none;
+}
+
+.js .input-file-container {
+  position: relative;
+  width: 100%;
+}
+.js .input-file-trigger {
+  display: block;
+  padding: 20px;
+  background: #47382d;
+  color: #fff;
+  font-size: 1em;
+  transition: all .4s;
+  cursor: pointer;
+  border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+.js .input-file {
+  position: absolute;
+  top: 0; left: 0;
+  width: 225px;
+  padding: 14px 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.js .input-file:hover + .input-file-trigger,
+.js .input-file:focus + .input-file-trigger,
+.js .input-file-trigger:hover,
+.js .input-file-trigger:focus {
+  background: #b96226;
+  color: #fff;
+}
+ .file-return {
+  margin: 0;
+}
+.file-return:not(:empty) {
+  margin: 1em 0;
+}
+.js .file-return {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+}
+.js .file-return:not(:empty):before {
+  content: "Selected file: ";
+  font-style: normal;
+  font-weight: normal;
+}

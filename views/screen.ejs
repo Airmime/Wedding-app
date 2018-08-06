@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Screen</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+</style>
+</head>
+<body class="bg-screener">
+
+	<div id="picture-box">
+		<img src="/uploads/<%=pic%>" id="picture"><br/>
+	</div>
+
+	<div id="content">
+		<div id="logo">
+			<img src="/img/title.png" alt="Title"><br/><br/>
+		</div>
+
+		<div id="peoples">
+			<img src="/img/picture.png" alt="picture">
+		</div>
+	</div>
+
+	<div id="howto">
+		<div id="round">
+			<img src="/img/phone.png" alt="phone">
+		</div>
+
+		<div id="message">
+			<p>
+				<i class="fas fa-camera-retro"></i> Send your photo to the bride and groom!<br/>
+				<span>http://localhost:8080/</span>
+			</p>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+
+		var socket = io('<%=server%>', {transports: ['websocket']});
+		
+		socket.on('message', function(message) {
+
+			var str = message;
+			var res = str.replace("public", "");
+			$('#picture').attr('src', res);
+			$( "#picture" ).fadeTo( "slow" , 1, function() {});
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Take a picture !</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="/css/minstyle.io.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+<body class="bg-index">
+	<div class="bg-line"></div>
+	<div class="container">
+		<div class="col-s-11 col-s-center">
+
+			<div class="row">
+				<div id="upload">
+
+					<div class="loader" style="margin: 20px 0; text-align: center;">
+						<h4><i class="fas fa-cloud-upload-alt"></i> Envoi de la photo en cours... </h4>
+					</div>
+
+					<div class="tohide">
+						<div class="pic">
+							<img src="/img/cam.gif" alt="">
+						</div>
+
+						<div class="text">
+							<h1>Take and send picture !</h1>
+
+							<p>
+								Take a picture and send it on the screen !
+							</p>
+						</div>
+
+						<form action="/send" method="post" enctype="multipart/form-data">
+							<div class="input-file-container">
+								<input class="input-file" name="picture" id="my-file" type="file" required>
+								<label for="my-file" class="input-file-trigger" tabindex="0"><i class="fas fa-camera-retro"></i> Open camera</label>
+							</div>
+							<p class="file-return"></p>
+							<input type="submit" id="submit" class="ms-btn ms-rounded ms-yellow ms-large" value="Send">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io('<%=server%>', {transports: ['websocket']});
+
+		document.querySelector("html").classList.add('js');
+
+		var fileInput  = document.querySelector( ".input-file" ),  
+		button     = document.querySelector( ".input-file-trigger" ),
+		the_return = document.querySelector(".file-return");
+
+		button.addEventListener( "keydown", function( event ) {
+			if ( event.keyCode == 13 || event.keyCode == 32 ) {
+				fileInput.focus();
+			}
+		});
+
+		button.addEventListener( "click", function( event ) {
+			fileInput.focus();
+			return false;
+		});
+
+		fileInput.addEventListener( "change", function( event ) {  
+			the_return.innerHTML = this.value;  
+		});
+
+		$('#submit').click( function(e){
+			$('.tohide').hide();
+			$('.loader').show();
+		});
+
+		$("#my-file").change(function(){
+		    $("#submit").show();
+		});
+
+	</script>
+</body>
+</html>
