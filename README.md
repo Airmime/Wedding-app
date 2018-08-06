@@ -1,6 +1,6 @@
 # Wedding App
 
-📺 This nodeJS application allows guests to publish photos on a screen from your mobile phone during a ceremony such as a wedding (also works for other events).
+📺 This nodeJS application allows guests to publish photos on a screen from their mobile phone during a ceremony such as a wedding (also works for other events).
 
 ## Requirement
 
